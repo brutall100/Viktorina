@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+
+    <title>Viktorina</title>
+  </head>
+
+  <body onload="start()">
+    <div class="container">
+      <p class="viktorina">Viktorina</p>
+      <h3 id="naujas_klausimas">Įrašyti klausimą ?</h3>
+      <input
+        type="button"
+        onclick="naujasKlausimas()"
+        class="newQ"
+        value=" Naujas klausaimas"
+      />
+      <h2 class="klausimas">Klausimas</h2>
+      <h3 class="verte">Vertė:</h3>
+
+      <p id="litai"></p>
+
+      <script>
+        function getRndInteger(min, max) {
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        document.getElementById("litai").innerHTML = getRndInteger(1, 5) +"  "+ "litai";
+      </script>
+
+
+      <script>
+     var myVar;
+
+    function myFunction() {
+     myVar = setInterval(getRndInteger(1, 5), 15000);
+      }
+     </script>
+
+
+
+
+
+
+            <h2 class="atsakymas">Atsakymas</h2>
+            <input type="text" class="answer" />
+            <input type="button" class="speti" value="Spėti" />
+<div class="chat">
+            <div class="containerChat">
+              <img src="\avatar\avatar-woman.png" alt="Avatar" style="width:22px; height:18px;">
+              <p>Hello. How are you today?</p>
+              <span class="time-right">11:00</span>
+            </div>
+            
+            <div class="containerChat darker">
+              <img src="\avatar\avatarMen.png" alt="Avatar" class="right" style="width:22px; height:18px;">
+              <p>Hey! I'm fine. Thanks for asking!</p>
+              <span class="time-left">11:01</span>
+            </div>
+            
+            <div class="containerChat">
+              <img src="\avatar\avatar-woman.png" alt="Avatar" style="width:22px; height:18px;">
+              <p>Sweet! So, what do you wanna do today?</p>
+              <span class="time-right">11:02</span>
+            </div>
+            
+            <div class="containerChat darker">
+              <img src="\avatar\avatarMen.png" alt="Avatar" class="right" style="width:22px; height:18px;">
+              <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
+              <span class="time-left">11:05</span>
+
+              
+              
+            </div>
+  </div>          
+            
+
+      <div class="chat-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1 class="pokalbiai">Pokalbiai</h1>
+
+        <label for="msg"><b></b></label>
+          <textarea placeholder="Rašyti žinutę" name="msg" required></textarea>
+
+          <button type="submit" class="btn">Rašyti</button>
+          
+          
+          </button>
+        </form>
+      </div>
+
+      <h3 id="laikas"></h3>
+    </div>
+  </body>
+</html>

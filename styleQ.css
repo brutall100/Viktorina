@@ -1,0 +1,74 @@
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+body {
+  box-sizing: border-box;
+}
+body{
+    background-image: url(images/background0.jpg);
+    /*reikia sutvarkyti dydi*/
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #cccccc;
+  }   
+
+#gryzimas-i-indexHTML {
+  font-family: Snell Roundhand, cursive;
+  background-color: none;
+  position: fixed;
+  top: 5px;
+  right: 15px;
+  width: auto;
+}
+.indexPuslapis {
+  position: fixed;
+  top: 63px;
+  right: 68px;
+  width: 90px;
+}
+
+/*laikroduko vieta*/
+#laikas {
+  position: absolute;
+  bottom: 0px;
+  right: 16px;
+  font-size: 17px;
+  border: 1px solid #d8e6dd50;
+}
+
+/*Klausimo irasymo taisykles isokantis langas css*/
+.tooltip {
+  display: inline;
+  position: relative;
+  background-color: #fff878;
+  border-radius: 5px;
+  top: 20px;
+  left: 25px;
+  font-size: 30px;
+  color: #0bd;
+  text-decoration: none;
+}
+.tooltip:hover:after {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background: #444;
+  border-radius: 10px;
+  color: #00a7cc;
+  content: attr(title);
+  font-size: 25px;
+  padding: 50px;
+  width: 262px;
+}
+.tooltip:hover:before {
+  border: solid;
+  border-color: #444 transparent;
+  border-width: 25px 7px 0 7px;
+  content: "";
+  left: 50%;
+  bottom: -5px;
+  position: absolute;
+}
