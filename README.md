@@ -1,2 +1,2 @@
 # Viktorina
-Bus aprasymas
+Bus aprasymas geras
