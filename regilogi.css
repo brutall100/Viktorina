@@ -29,20 +29,21 @@
 	border-radius: 30px;
 }
 #login-btn{
-	text-orientation: center;
-	position:absolute;
+    position:absolute;
 	left: -1px;
 	top: -2px;
-	width: 77px;
+	width: 80px;
 	border: 2px solid rgba(211, 128, 128, 0.993);
+	border-radius: 30px 1px 1px 30px;
 	box-shadow: 0 0 255px 9px #3a16069a;
 }
 #register-btn{
 	position:absolute; 
-	left: 153px;
+	left: 140px;
 	top: -2px;
-	width: 82px;
+	width: 95px;
 	border: solid 2px rgb(211, 128, 128, 0.993); 
+	border-radius: 1px 30px 30px 1px;
 }
 .toggle-btn1{ 
 	padding: 10px 30px;
@@ -140,3 +141,32 @@ span{
 #register{ 
   left: -85px; 
 }  */
+.underline{
+	width:100%;
+	height: 5px;
+	background: linear-gradient(to right, #ff105f,#ffad06);
+	border-radius: 3px;
+	position:absolute;
+	top: 30px;
+	left: 0;
+	
+
+}
+.underline span {
+	width: 48px;
+	height: 100%;
+	background: linear-gradient(to right, #ff105f,#ffad06);	
+	border-radius: 3px;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	animation: moving 8s linear infinite;
+}
+@keyframes moving{
+	0%{
+		left: -20px;
+	}
+	100%{
+		left: 100%;
+	}
+}
