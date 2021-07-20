@@ -1,0 +1,94 @@
+<!-- Pats pirmasis puslapis Registracija ir prisijungimas
+registracija
+A Vardas(nick)
+B Password
+C Mail
+D Lytis pasirenkama iš saraso 58 lyciu taigi yra https://abcnews.go.com/blogs/headlines/2014/02/heres-a-list-of-58-gender-options-for-facebook-users
+registruojantis bus galima irašyti savo susigalvota nick
+                bus galima pasirinkti sugeneruota varda su JS
+
+Registruojantis siunciama DATA i duomenu bazes
+1 ID
+2 LVL
+3 reg data
+4 last login
+5 pastas
+6 lytis 
+7 ip adresas kad butu galima deti BAN
+8 gal dar ko neuzrasiau
+9 
+10 
+prisijungimas paprastas-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="regilogi.css"/>
+  <title>Prisijungimas ir Registracija</title>
+</head>
+<body>
+  <div class="hero">
+      <div class="form-box">
+        <div class="button-box">
+          <!-- <div id="btn"> -->
+          <buttont type="button" id="login-btn" class="submit-btn" onclick="login()">Prisijungti</button>
+            <!-- <script> -->
+              <!-- // var f = document.getElementById("login-btn"); -->
+              <!-- // var g = document.getElementById("register-btn"); -->
+              <!-- // var h = document.getElementById("login"); -->
+              <!-- // var i = document.getElementById("register"); -->
+              <!-- // var j = document.getElementByClass("form-box"); -->
+            <!-- // function login(){  -->
+                <!-- // f.style.left = "-380px"; -->
+                <!-- // g.style.left = "170px"; -->
+                <!-- // h.style.left = "10px"; -->
+                <!-- // i.style.left = "10px"; -->
+                <!-- // j.style.left = "10px"; -->
+            <!-- //  } -->
+            <!--</script> -->
+            <buttont type="button" id="register-btn" class="submit-btn" onclick="register()">Registruotis</button>
+            <!-- <script> -->
+              <!-- var a = document.getElementById("login-btn"); -->
+              <!-- var b = document.getElementById("register-btn"); -->
+              <!-- var c = document.getElementById("login"); -->
+              <!-- var d = document.getElementById("register"); -->
+              <!-- var e = document.getElementByClass("form-box"); -->
+            <!-- function register(){ -->
+               <!-- a.style.left = "-1000px"; -->
+               <!-- b.style.left = "-50px"; -->
+               <!-- c.style.left = "100px"; -->
+               <!-- d.style.left = "100px"; -->
+               <!-- e.style.left = "100px"; -->
+             <!-- }  -->
+           <!-- </script> -->
+              <!-- </div> -->
+          </div>
+        <div class="social-icons">
+            <img src="images/fb.png">
+            <img src="images/tw.png">
+            <img src="images/gp.png">
+        </div>
+        <form id="login" class="input-group1">
+        <input type="text" class="input-field" placeholder="Vartotojas" required>
+        <input type="text" class="input-field" placeholder="Slaptažodis" required>
+        <input type="checkbox" class="check-box"><span>Prisiminti slaptažodį</span> 
+        <button type="submit" class="submit-btn">Prisijungimas</button>
+        </form>
+        <form id="register"class="input-group2">
+        <input type="text" class="input-field" placeholder="Vartotojas" required>
+        <input type="email" class="input-field" placeholder="Email" required>
+        <input type="text" class="input-field" placeholder="Slaptažodis" required>
+        <input type="checkbox" class="check-box"><span>Sutikimas su taisyklėmis ir tvarka</span> 
+        <button type="submit" class="submit-btn">Registracija</button>
+        </form>
+      </div>
+  </div>
+
+
+<script src="regilogi.js"></script>
+<script src="regilogii.js"></script>
+
+</body>
+</html>

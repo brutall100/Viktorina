@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="styleQ.css">
-    <script src="script.js"></script>
-    <script src="scriptQ.js"></script>
+ <head>
+     <meta charset="UTF-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="styleQ.css">
+     <!-- Latest compiled and minified CSS kopija is github -->
+    
+     <!-- scriptai perkelti zemyn,nezinau kaip veiks..
+     <script src="script.js"></script>
+     <script src="scriptQ.js"></script> -->
     <title>Klausimo įrašymo puslapis</title>
   </head>
-  <body onload="startTime()"; onload="start()"></body>
+  <body onload="startTime()" class="bg-light">
+    
     <div id="newQ">
+    <div class="container">
+    <div class="py-5 text-center">
+      <fieldset>
+  
+        <form name="frmContact" class="needs-validation " method="post" action="question_irasymas.php">
+          <p>
+            <label for="klausimas">Klausimas </label>
+            <input type="text" class="form-control" name="txtName" id="txtName" placeholder="Klausimas ?" value="" required>
+          <div class="invalid-feedback">
+                        Klausimas turi buti tvarkingas
+                      </div>
+          </p>
+          <p>
+            <label for="atsakymas">Atsakymas</label>
+            <input type="text"  class="form-control"  name="txtEmail" id="txtEmail" placeholder="Atsakymas" value="" required>
+            <div class="invalid-feedback">
+                       Atsakymas turi buti tvarkingas
+                       </div>
+          </p>
+
+          <p>&nbsp;</p>
+          <p>
+            <input type="submit" name="Submit" id="Submit" value="Irasyti"  class="btn btn-primary btn-lg btn-block">
+          </p>
+        </form>
+      </fieldset>
+
       
    <h3 id="gryzimas-i-indexHTML"> Grįžti atgal į viktoriną</h3>
      
@@ -34,6 +66,9 @@
     <div>
         <h3 id="laikas"></h3>
     </div>
+    <script src="script.js"></script>
+    <script src="scriptQ.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   </body>
 </html>
 <!-- Komentaras HTML -->
