@@ -72,7 +72,7 @@
 	position: absolute;
 	width: 110px;
 	height: 100%;
-	background: linear-gradient(to right,#ff105f,#fdaa04);
+	background: linear-gradient(to right,#ff105f,#0470fd);
 	border-radius: 10px;
 	transition: .5s;
 }
@@ -118,7 +118,7 @@
 	cursor: pointer;
 	display: block;
 	margin: auto;
-	background: linear-gradient(to right, #ff105f,#ffad06);
+	background: linear-gradient(to right, #ff105f,#0787ff);
 	border: 0;
 	outline: none;
 	border-radius: 30px;
@@ -170,3 +170,24 @@ span{
 		left: 100%;
 	}
 }
+
+#random-name{
+text-align: center;
+color: blue;
+margin: 10px;
+padding: 20px;
+transition: background 3s;
+
+}
+#random-name:hover {
+	background: rgb(255, 0, 212);
+	
+   
+  }
+
+#generate{
+max-width: 200px;
+
+}
+
+

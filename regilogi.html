@@ -30,9 +30,18 @@ prisijungimas paprastas-->
   <title>Prisijungimas ir Registracija</title>
 </head>
 <body>
-  <div class="hero">
+ <div class="hero">
+    <div class="container">
+  
+      <!-- <h1>Pasirinkti vardą</h1> -->
+      <!-- dar reiks mygtuka kad auto copi padrytu vardo -->
+        <h2><div id="random-name"></div></h2>
+      <button class="submit-btn" id="generate">Generuoti vardą</button>
+      
+      </div>
       <div class="form-box">
         <div class="button-box">
+
           <!-- <div id="btn"> -->
             <buttont type="button" id="login-btn" class="submit-btn" onclick="login()">Prisijungti</button>
             <buttont type="button" id="register-btn" class="submit-btn" onclick="register()">Registruotis</button>
@@ -61,6 +70,7 @@ prisijungimas paprastas-->
         <div class="underline"><span><h2>Viktorina</h2></span></div>
               </div>
   </div>
-
+  <script src="nameGenerator.js"></script>
 </body>
+
 </html>
