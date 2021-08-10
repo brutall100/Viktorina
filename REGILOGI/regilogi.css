@@ -1,4 +1,5 @@
 *{
+	/* box-sizing: border-box; */
 	margin: 0;
 	padding: 0;
 	font-family: sans-serif;
@@ -6,16 +7,17 @@
 .hero{
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(images/kalnai.jpg);
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/images/kalnai.jpg);
 	background-position: center;
 	background-size: cover;
 	position: absolute;
 }
 .form-box{
+	border-radius: 4px;
 	width: 380px;
 	height: 480px;
 	position: center auto;
-	margin: 100px auto;
+	margin: 50px auto;
 	background: rgb(173, 190, 197);
 	padding: 20px;
 	/* overflow: hidden; */
@@ -141,7 +143,9 @@ span{
 #register{ 
   left: -85px; 
 }  */
-.underline{
+
+/* paslepta beganti eilute(nereikalinga kolkas) */
+/* .underline{
 	width:100%;
 	height: 5px;
 	background: linear-gradient(to right, #ff105f,#ffad06);
@@ -169,25 +173,31 @@ span{
 	100%{
 		left: 100%;
 	}
-}
+} */
+.container-generator{
 
+	position: center ;
+	width: 410px;
+	text-align: center;
+	justify-content: center;
+	background: rgb(173, 190, 197);
+	border-radius: 4px;
+	margin: 15px auto;
+	padding: 4px;
+}
+/* Kolkas paliekam taip vardo generatoriaus vieta */
 #random-name{
-text-align: center;
-color: blue;
-margin: 10px;
+color: white;
+margin: 29px;
 padding: 20px;
 transition: background 3s;
-
 }
 #random-name:hover {
-	background: rgb(255, 0, 212);
-	
-   
-  }
-
+	background: rgba(255, 0, 212, 0.116);
+}
 #generate{
 max-width: 200px;
-
+margin: 20px auto;
 }
 
 

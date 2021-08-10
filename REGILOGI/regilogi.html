@@ -31,13 +31,14 @@ prisijungimas paprastas-->
 </head>
 <body>
  <div class="hero">
-    <div class="container">
+    <div class="container-generator">
   
       <!-- <h1>Pasirinkti vardą</h1> -->
       <!-- dar reiks mygtuka kad auto copi padrytu vardo -->
         <h2><div id="random-name"></div></h2>
       <button class="submit-btn" id="generate">Generuoti vardą</button>
-      
+      <button onclick="autoCopy()" class="submit-btn" id="copy">Kopijuoti vardą</button>
+
       </div>
       <div class="form-box">
         <div class="button-box">
@@ -45,15 +46,15 @@ prisijungimas paprastas-->
           <!-- <div id="btn"> -->
             <buttont type="button" id="login-btn" class="submit-btn" onclick="login()">Prisijungti</button>
             <buttont type="button" id="register-btn" class="submit-btn" onclick="register()">Registruotis</button>
-              <div class="underline"><span><h2>Viktorina</h2></span></div>
+              <!-- <div class="underline"><span><h2>Viktorina</h2></span></div> -->
               <!-- </div> -->
         </div>
         <div class="social-icons">
-            <img src="images/fb.png">
-            <img src="images/tw.png">
-            <img src="images/gp.png">
-            <div class="underline"><span><h2>Viktorina</h2></span></div>
-        </div>
+            <img src="/images/fb.png">
+            <img src="/images/tw.png">
+            <img src="/images/gp.png">
+            <!-- <div class="underline"><span><h2>Viktorina</h2></span></div>
+        </div> -->
         <form id="login" class="input-group-prisijungimas">
         <input type="text" class="input-field" placeholder="Vartotojas" required>
         <input type="text" class="input-field" placeholder="Slaptažodis" required>
@@ -67,8 +68,8 @@ prisijungimas paprastas-->
         <input type="checkbox" class="check-box"><span>Sutikimas su taisyklėmis ir tvarka</span> 
         <button type="submit" class="submit-btn">Registracija</button>
         </form>
-        <div class="underline"><span><h2>Viktorina</h2></span></div>
-              </div>
+        <!-- <div class="underline"><span><h2>Viktorina</h2></span></div>
+              </div> -->
   </div>
   <script src="nameGenerator.js"></script>
 </body>
