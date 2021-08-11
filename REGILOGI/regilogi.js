@@ -1,11 +1,26 @@
-function login() { 
-    document.getElementById("register").style.left = "20px"; 
-    document.getElementById("login").style.left = "400px";
-  }
-  function register() {
-    document.getElementById("login").style.left = "-40px";
-    document.getElementById("register").style.left = "40px";
-  }  
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
+
+
+
+
+// function login() { 
+//     document.getElementById("register").style.left = "20px"; 
+//     document.getElementById("login").style.left = "400px";
+//   }
+//   function register() {
+//     document.getElementById("login").style.left = "-40px";
+//     document.getElementById("register").style.left = "40px";
+//   }  
 
 //   var f = document.getElementById("login-btn"); 
 //   var g = document.getElementById("register-btn"); 

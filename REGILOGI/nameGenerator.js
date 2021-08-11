@@ -1,4 +1,4 @@
-const firstNames = ["Ąžuolas","Kamilė","Dalia","Saulius","Juratė","Lukas","Dovydas","Ignas","Inga", "Laura", "Kristina", "Valdelis", "Marius", "Tania", "Rūta", "Gintarė", "Tomas", "Erlandas", "Giedrius", "Viktorija", "Ramas", "Efka", "Reno", "Rex", "Mama", "Tete", "Sese", "Teta"];
+const firstNames = ["Justė","AKiss","Ąžuolas","Kamilė","Dalia","Saulius","Juratė","Lukas","Dovydas","Ignas","Inga", "Laura", "Kristina", "Valdelis", "Marius", "Tania", "Rūta", "Gintarė", "Tomas", "Erlandas", "Giedrius", "Viktorija", "Ramas", "Efka", "Reno", "Rex", "Mama", "Tete", "Sese", "Teta"];
 
 const secondNames = ["Paprastutė","Generolas","Nuolanki","Trapi","Išmintinga","Kietasis","1","2","3","","Sasiska","Puikioji","Išmanusis","Piktas","Rusas","Kiškis","Genijus","Babulė","Dundukas","Siaubūnas", "Protinguolis", "Afigienas", "Beprotis", "Juokingas", "Tikintis", "Storulis", "Beprotis", "Pilotas", "Trumparegis", "Mamos", "Koldūnas", "Sliekas", "Baršiasriubis", "Gudrus", "Gerasis", "Išprotejusi", "Karšta", "Gudri", "Putiovas","Digimonas", "Pokemonas", "Gražioji"];
 
