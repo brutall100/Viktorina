@@ -266,16 +266,26 @@ footer a {
 	padding: 4px;
 } */
 /* Kolkas paliekam taip vardo generatoriaus vieta */
+
+
+
+
 #random-name{
 color: white;
-margin: 29px;
-padding: 20px;
-transition: background 3s;
+margin: 2px;
+padding: 2px;
+
 }
 #random-name:hover {
-	background: rgba(255, 0, 212, 0.116);
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
 }
-#generate{
-max-width: 200px;
-margin: 20px auto;
+#generuoti-varda #kopijuoti-varda {
+
+    max-width: 30px;
+    margin: 2px auto;
 }
