@@ -1,180 +1,260 @@
-*{
-	/* box-sizing: border-box; */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+* {
+	box-sizing: border-box;
+    
+}
+/* background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("C:\xampp\htdocs\VK\Viktorina\img_cover\cover5.jpg"); */
+
+body {
+	/* background-color: green; */
+    background-image: url('/imgcover/cover5.jpg');  
+    background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
+
+h1 {
+	font-weight: bold;
 	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
 }
-.container{
-	height: 100%;
-	width: 100%;
-	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(cover/cover1.jpg);
-	background-position: center;
-	background-size: cover;
-	position: absolute;
-}
-.form-box{
-	border-radius: 4px;
-	width: 380px;
-	height: 480px;
-	position: center auto;
-	margin: 50px auto;
-	background: rgb(173, 190, 197);
-	padding: 20px;
-	/* overflow: hidden; */
-}
-.button-box{
-	width: 300px;
-	height: 40px;
-	margin: 35px auto;
-	position: relative;
-	box-shadow: 0 0 20px 9px #ce49109a;
-	border-radius: 30px;
-}
-#login-btn{
-    position:absolute;
-	left: -1px;
-	top: -2px;
-	width: 80px;
-	border: 2px solid rgba(211, 128, 128, 0.993);
-	border-radius: 30px 1px 1px 30px;
-	box-shadow: 0 0 255px 9px #3a16069a;
-}
-#register-btn{
-	position:absolute; 
-	left: 140px;
-	top: -2px;
-	width: 95px;
-	border: solid 2px rgb(211, 128, 128, 0.993); 
-	border-radius: 1px 30px 30px 1px;
-}
-.toggle-btn1{ 
-	padding: 10px 30px;
-	cursor: pointer;
-	background: transparent;
-	border: 0;
-	outline: none;
-	position: relative;
-	left: 500px;
-	border: 3px solid rgb(23, 0, 128);
-	margin: auto;
- }
-.toggle-btn2{
-	padding: 10px 30px;
-	cursor: pointer;
-	background: transparent;
-	border: 0;
-	outline: none;
-	position: relative;
-	left: 50px;
-	border: 3px solid rgb(128, 0, 0);
-}
-#btn{ 
-	top: -10px;
-	left: 40px;
-	position: absolute;
-	width: 110px;
-	height: 100%;
-	background: linear-gradient(to right,#ff105f,#0470fd);
-	border-radius: 10px;
-	transition: .5s;
-}
-.social-icons{
-	margin: 30px auto;
+
+h2 {
 	text-align: center;
 }
-.social-icons img{
-	width: 30px ;
-	margin: 0 12px;
-	box-shadow: 0 0 20px 0 #7f7f7f3d;
-	cursor: pointer;
-	border-radius: 50%;  /*icons round shape*/
+
+p {
+	font-size: 14px;
+	font-weight: 100;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	margin: 20px 0 30px;
 }
-.input-group-prisijungimas{
-	top:20px ;
-	left: 16px;
-	position: relative;
-	width: 345px;
-	transition: .5s;	
-}
-.input-group-registracija{
-	top: -226px ;
-	left: 500px;
-	position: relative;
-	width: 345px;
-	transition: .5s;	
-}
-.input-field{
-	width: 100%;
-	padding: 10px 0;
-	margin: 5px 0;
-	border-left: 0;
-	border-top: 0;
-	border-right: 0;
-	border-bottom: 1px solid #999;
-	outline: none;
-	background: transparent;
-}
-.submit-btn{
-	width: 85%;
-	padding: 10px 30px;
-	cursor: pointer;
-	display: block;
-	margin: auto;
-	background: linear-gradient(to right, #ff105f,#0787ff);
-	border: 0;
-	outline: none;
-	border-radius: 30px;
-}
-.check-box{
-	margin: 30px 10px 30px 0;
-}
-span{
-	color: #777;
+
+span {
 	font-size: 12px;
-	bottom: 68px;
-	position: absolute;
 }
 
-
-/* #login{ 
-   position: center; 
-   top: 220px; 
+a {
+	color: #333;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
 }
-#register{ 
-  left: -85px; 
-}  */
 
-/* paslepta beganti eilute(nereikalinga kolkas) */
-/* .underline{
-	width:100%;
-	height: 5px;
-	background: linear-gradient(to right, #ff105f,#ffad06);
-	border-radius: 3px;
-	position:absolute;
-	top: 30px;
-	left: 0;
-	
-
+button {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
 }
-.underline span {
-	width: 48px;
+
+button:active {
+	transform: scale(0.95);
+}
+
+button:focus {
+	outline: none;
+}
+
+button.ghost {
+	background-color: transparent;
+	border-color: #FFFFFF;
+}
+
+form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
 	height: 100%;
-	background: linear-gradient(to right, #ff105f,#ffad06);	
-	border-radius: 3px;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	width: 768px;
+	max-width: 100%;
+	min-height: 480px;
+}
+
+.form-container {
 	position: absolute;
 	top: 0;
-	left: 10px;
-	animation: moving 8s linear infinite;
+	height: 100%;
+	transition: all 0.6s ease-in-out;
 }
-@keyframes moving{
-	0%{
-		left: -20px;
+
+.sign-in-container {
+	left: 0;
+	width: 50%;
+	z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+	transform: translateX(100%);
+}
+
+.sign-up-container {
+	left: 0;
+	width: 50%;
+	opacity: 0;
+	z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+	transform: translateX(100%);
+	opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
+@keyframes show {
+	0%, 49.99% {
+		opacity: 0;
+		z-index: 1;
 	}
-	100%{
-		left: 100%;
+	
+	50%, 100% {
+		opacity: 1;
+		z-index: 5;
 	}
-} */
-.containerr-generator{
+}
+
+.overlay-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+	overflow: hidden;
+	transition: transform 0.6s ease-in-out;
+	z-index: 100;
+}
+
+.container.right-panel-active .overlay-container{
+	transform: translateX(-100%);
+}
+
+.overlay {
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	color: #FFFFFF;
+	position: relative;
+	left: -100%;
+	height: 100%;
+	width: 200%;
+  	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.container.right-panel-active .overlay {
+  	transform: translateX(50%);
+}
+
+.overlay-panel {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	top: 0;
+	height: 100%;
+	width: 50%;
+	transform: translateX(0);
+	transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+	transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+	transform: translateX(0);
+}
+
+.overlay-right {
+	right: 0;
+	transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+	transform: translateX(20%);
+}
+
+.social-container {
+	margin: 20px 0;
+}
+
+.social-container a {
+	border: 1px solid #DDDDDD;
+	border-radius: 50%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+}
+
+footer {
+    background-color: #222;
+    color: #fff;
+    font-size: 14px;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 999;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer i {
+    color: red;
+}
+
+footer a {
+    color: #3c97bf;
+    text-decoration: none;
+}
+
+/* .container-generator{
 
 	position: center ;
 	width: 410px;
@@ -184,20 +264,28 @@ span{
 	border-radius: 4px;
 	margin: 15px auto;
 	padding: 4px;
-}
+} */
 /* Kolkas paliekam taip vardo generatoriaus vieta */
+
+
+
+
 #random-name{
 color: white;
-margin: 29px;
-padding: 20px;
-transition: background 3s;
+margin: 2px;
+padding: 2px;
+
 }
 #random-name:hover {
-	background: rgba(255, 0, 212, 0.116);
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
 }
-#generate{
-max-width: 200px;
-margin: 20px auto;
+#generuoti-varda #kopijuoti-varda {
+
+    max-width: 30px;
+    margin: 2px auto;
 }
-
-

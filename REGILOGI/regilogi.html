@@ -1,77 +1,91 @@
-<!-- Pats pirmasis puslapis Registracija ir prisijungimas
-registracija
-A Vardas(nick)
-B Password
-C Mail
-D Lytis pasirenkama iš saraso 58 lyciu taigi yra https://abcnews.go.com/blogs/headlines/2014/02/heres-a-list-of-58-gender-options-for-facebook-users
-registruojantis bus galima irašyti savo susigalvota nick
-                bus galima pasirinkti sugeneruota varda su JS
-
-Registruojantis siunciama DATA i duomenu bazes
-1 ID
-2 LVL
-3 reg data
-4 last login
-5 pastas
-6 lytis 
-7 ip adresas kad butu galima deti BAN
-8 gal dar ko neuzrasiau
-9 
-10 
-prisijungimas paprastas-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="regilogi.css"/>
-  <script src="regilogi.js"></script>
-  <title>Prisijungimas ir Registracija</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/regilogi.css">
+        <title>Registracija ir Prisijungimas</title>
 </head>
 <body>
- <div class="container" id="container">
-    <div class="container-generator">
-  
-      <!-- <h1>Pasirinkti vardą</h1> -->
-      <!-- dar reiks mygtuka kad auto copi padrytu vardo -->
-        <h2><div id="random-name"></div></h2>
-      <button class="submit-btn" id="generate">Generuoti vardą</button>
-      <button onclick="autoCopy()" class="submit-btn" id="copy">Kopijuoti vardą</button>
 
-    </div>
-      <div class="form-box">
-        <div class="button-box">
+ 
+        <div class="container-generator">
+      
+       <!-- Generuojamas textas id=random-name -->
+          <h2><div id="random-name"></div></h2>
+         <button  id="generuoti-varda">Generuoti vardą</button>
+		 <!-- <button onclick="autoCopy()"  id="kopijuoti-varda">Kopijuoti vardą</button> -->
+         
+		 <!-- <div class="result-container">
+			<span id="result"></span>
+			<button class="btn" id="clipboard">
+				<i class="far fa-clipboard"></i>
+			</button> -->
 
-          <div class="container" id="container"></div>
-            <buttont type="button" id="login-btn" class="submit-btn" onclick="login()">Prisijungti</button>
-            <buttont type="button" id="register-btn" class="submit-btn" onclick="register()">Registruotis</button>
-              <!-- <div class="underline"><span><h2>Viktorina</h2></span></div> -->
-              <!-- </div> -->
+		</div>
+				 <!-- <h1>Pasirinkti vardą</h1> -->
+          <!-- dar reiks mygtuka kad auto copi padrytu vardo -->
         </div>
-        <div class="social-icons">
-            <img src="soc_icons/fb.png">
-            <img src="soc_icons/tw.png">
-            <img src="soc_icons/gp.png">
-            <!-- <div class="underline"><span><h2>Viktorina</h2></span></div>
-        </div> -->
-        <form id="login" class="input-group-prisijungimas">
-        <input type="text" class="input-field" placeholder="Vartotojas" required>
-        <input type="text" class="input-field" placeholder="Slaptažodis" required>
-        <input type="checkbox" class="check-box"><span>Prisiminti slaptažodį</span> 
-        <button type="submit" class="submit-btn">Prisijungimas</button>
-        </form>
-        <form id="register"class="input-group-registracija">
-        <input type="text" class="input-field" placeholder="Vartotojas" required>
-        <input type="email" class="input-field" placeholder="Email" required>
-        <input type="text" class="input-field" placeholder="Slaptažodis" required>
-        <input type="checkbox" class="check-box"><span>Sutikimas su taisyklėmis ir tvarka</span> 
-        <button type="submit" class="submit-btn">Registracija</button>
-        </form>
-        <!-- <div class="underline"><span><h2>Viktorina</h2></span></div>
-              </div> -->
-  </div>
-  <script src="nameGenerator.js"></script>
-</body>
 
+
+
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="regilogi.js"></script>
+<script src="nameGenerator.js"></script>
+<footer>
+	<p>
+		Sukurta <i class="fa fa-heart"></i> su
+		<a target="_blank" href="https://www.google.lt">MEILE.</a>
+		Norėdami prisidėti prie projekto plėtros.Spauskitę 
+		<a target="_blank" href="https://www.patreon.com">čia</a>.
+	</p>
+</footer>
+    
+</body>
 </html>
