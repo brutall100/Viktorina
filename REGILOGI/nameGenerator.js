@@ -2,12 +2,12 @@ const firstNames = ["Justė","AKiss","Ąžuolas","Kamilė","Dalia","Saulius","Ju
 
 const secondNames = ["Uoga","Pupa","Super","Linksmuolis","Bambalinis","Kukli","Paprastutė","Generolas","Nuolanki","Trapi","Išmintinga","Kietasis","1","2","3","","Sasiska","Puikioji","Išmanusis","Piktas","Rusas","Kiškis","Genijus","Babulė","Dundukas","Siaubūnas", "Protinguolis", "Afigienas", "Beprotis", "Juokingas", "Tikintis", "Storulis", "Beprotis", "Pilotas", "Trumparegis", "Mamos", "Koldūnas", "Sliekas", "Baršiasriubis", "Gudrus", "Gerasis", "Išprotejusi", "Karšta", "Gudri", "Putiovas","Digimonas", "Pokemonas", "Gražioji"];
 
-const getRandomNumber = (max) => Math.floor(Math.random() * max);
+let getRandomNumber = (max) => Math.floor(Math.random() * max);
 
-const getRandomName = () => 
+let getRandomName = () => 
   `${firstNames[getRandomNumber(firstNames.length)]} ${secondNames[getRandomNumber(secondNames.length)]}`;
 
-const setRandomName = () => {
+let setRandomName = () => {
   document.getElementById('random-name').innerText = getRandomName();
 }
 
@@ -21,7 +21,7 @@ setRandomName();
 
 // 1 Dar bus galima irasyti vardo ir pavardes pasiulymus vartotojui turinciam lvl
 // 1 Kad vartotojas galetu kazka pasiulyti arba Registruojantis
-// 1 Jo nickas nueitu i pasiulymus const firstNames
+// 1 Jo nickas nueitu i pasiulymus let firstNames
 // 2  Auto copy mygtukas arba tiesiog paspaudus ant patinkancio nick
 // 2 nickas nusikeltu i registracija
 // funkcija kolkas neveikia
@@ -37,7 +37,7 @@ setRandomName();
 
 
 // const copyToClipboard = str => {
-// 	const el = document.createElement('random-name');
+// 	let el = document.createElement('random-name');
 // 	el.value = str;
 // 	document.body.appendChild(el);
 // 	el.select();
