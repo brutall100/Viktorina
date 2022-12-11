@@ -2,14 +2,16 @@
 
 * {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
     
 }
-background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("C:\xampp\htdocs\VK\Viktorina\img_cover\cover5.jpg"); 
+
 
 body {
-	/* background-color: green; */
-    background-image: url('/imgcover/cover5.jpg');  
-    background-size: cover;
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("C:\xampp\htdocs\VK\Viktorina\img_cover\cover5.jpg"); 
+    background-image: url('/img/imgcover/cover4.jpg');  
+    background-size: cover; 
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -19,25 +21,12 @@ body {
 	margin: -20px 0 50px;
 }
 
-h1 {
-	font-weight: bold;
-	margin: 0;
-}
-
-h2 {
-	text-align: center;
-}
-
 p {
 	font-size: 14px;
 	font-weight: 100;
 	line-height: 20px;
 	letter-spacing: 0.5px;
 	margin: 20px 0 30px;
-}
-
-span {
-	font-size: 12px;
 }
 
 a {
@@ -82,7 +71,7 @@ form {
 	padding: 0 50px;
 	height: 100%;
 	text-align: center;
-}
+} 
 
 input {
 	background-color: #eee;
@@ -175,7 +164,7 @@ input {
 	height: 100%;
 	width: 200%;
   	transform: translateX(0);
-	transition: transform 0.6s ease-in-out;
+	transition: transform 1s ease-in-out;
 }
 
 .container.right-panel-active .overlay {
@@ -241,51 +230,4 @@ footer {
     z-index: 999;
 }
 
-footer p {
-    margin: 10px 0;
-}
 
-footer i {
-    color: red;
-}
-
-footer a {
-    color: #3c97bf;
-    text-decoration: none;
-}
-
-/* .container-generator{
-
-	position: center ;
-	width: 410px;
-	text-align: center;
-	justify-content: center;
-	background: rgb(173, 190, 197);
-	border-radius: 4px;
-	margin: 15px auto;
-	padding: 4px;
-} */
-/* Kolkas paliekam taip vardo generatoriaus vieta */
-
-
-
-
-#random-name{
-color: white;
-margin: 2px;
-padding: 2px;
-
-}
-#random-name:hover {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 0 0;
-}
-#generuoti-varda #kopijuoti-varda {
-
-    max-width: 30px;
-    margin: 2px auto;
-}
