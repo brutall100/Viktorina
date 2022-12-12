@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+<script>
+// Get the canvas element
+var canvas = document.getElementById("myCanvas");
+
+// Get the 2D drawing context
+var ctx = canvas.getContext("2d");
+
+// Create a new image object for the monster
+var img = new Image();
+img.src = "monster.png";
+
+// Set the initial position of the monster
+var x = 0;
+var y = 0;
+
+// Set the movement speed of the monster
+var dx = 2;
+var dy = 2;
+
+function draw() {
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw the monster at its current position
+  ctx.drawImage(img, x, y);
+
+  // Update the position of the monster
+  x += dx;
+  y += dy;
+
+  // Check if the monster has reached the edge of the canvas
+  if (x + img.width > canvas.width || x < 0) {
+    // Reverse the horizontal movement direction
+    dx = -dx;
+  }
+  if (y + img.height > canvas.height || y < 0) {
+    // Reverse the vertical movement direction
+    dy = -dy;
+  }
+}
+
+// Draw the monster every 10 milliseconds
+setInterval(draw, 10);
+</script>
+
+</body>
+</html>
