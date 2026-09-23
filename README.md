@@ -1,35 +1,77 @@
 # Viktorina
 
-It will be a very interactive quiz, but also an educational one.
-It will be easy and simple to use.
-The quiz will be very fast.Interactive.It will be extraordinary
-Its operation will be described later.
+A fast, interactive quiz game in Lithuanian — answer against the clock, earn litai, level up and submit your own questions.
 
+**[Live demo](https://brutall100.github.io/viktorina-quiz/)** · **[Source code](https://github.com/brutall100/viktorina-quiz)**
 
-Questions can be saved by all users with level 1.
-Users from level 3 can approve.
-This will ensure that the questions are written in an orderly manner.
-For each neatly written question, the user receives 10 Litas.
-A user with level 3 can either approve or reject
-recording the question in the database. For this he receives 1 litas.
-It will not be so easy to enter questions into the database.
-Questions that are entered (users from level 1-5) will be ranked.
-Until at least 5 users have voted. When there are already at least 5 votes.
-Only then will a user with 3,4,5 levels be able to solve or save a question to the database.
+![Viktorina — quiz game screenshot](docs/screenshot.webp)
 
+## About
 
+Viktorina ("quiz" in Lithuanian) is my first quiz project, started in 2021. The idea: a quick,
+educational quiz where the players also help grow the question bank. Anyone can submit a question,
+other players vote on it, and once it has 5 votes a level 3+ player can approve it into the game.
 
-Tai bus labai interaktyvi viktorina,bet  kartu ir mokomoji.
-Bus lengva ir paprasta naudotis.
+This version keeps the original idea and features and presents them as a clean static site that runs
+on GitHub Pages — no server or database needed. Everything the player does is saved in the browser.
 
-Klausimus gali įrašyti visi vartotojai turintis 1 lygį.
-Patvirtinti gali vartotojai nuo 3 lygio.
-Taip bus užtikrinta ,kad klausimai bus tvarkingai parašyti.
-Už kiekvieną tvarkingai parašyta klausimą vartotojas gauna po 10 Litų.
-Vartotojas turintis 3 lygį gali arba patvirtinti arba atmesti 
-klausimo įrašymą į duomenų bazę.Už tai jis gauna 1 Litą.
-Klausimus į duomenų bazę nebus taip paprasta įrašyti.
-Klausimai kurie įrašyti (vartotojai nuo 1- 5 lygio) bus reitinguojami.
-Kol nebus pabalsavę bent 5 vartotojai.Kai jau bus bent 5 balsai.
-Tik tada vartotojas turintis 3,4,5 lygius galės spręsti ar įrašyti klausima į duomenų bazę.
+## Features
 
+- **Quiz with a timer** — 15 seconds per question, random value of 1–5 Lt, streak counter.
+- **Forgiving answers** — case, Lithuanian diacritics and punctuation are ignored (`klaipeda` = `Klaipėda`).
+- **Levels 1–5** — litai you earn fill a progress bar and unlock new levels.
+- **Question bank** — submit a question (+10 Lt), vote for it, approve it at level 3 (+1 Lt), then play it.
+- **Nickname & password generator** — grammatically correct Lithuanian nicknames and a secure password (`crypto.getRandomValues`).
+- **Chat demo** — a small chat with the quiz host.
+- **Light & dark mode** — follows the system setting, with a toggle that remembers your choice.
+- **Live background** — dot grid, pulsing corner glow and a scrolling news ticker (animated with `transform`/`opacity` only).
+- **Micro-interactions** — lifting buttons with ripple and a moving ↗ icon, cards that rise, scroll reveals, counting numbers.
+- **Accessible** — skip link, visible `:focus-visible`, alt texts, `aria-live` feedback, `prefers-reduced-motion` support.
+- **Responsive** — works down to 390 px wide with no sideways scrolling.
+
+## Built with
+
+- HTML5, CSS3 (custom properties, grid, `color-mix`) and vanilla JavaScript
+- `localStorage` for progress, `IntersectionObserver` for scroll effects
+- Fonts: Barlow Condensed, Barlow and JetBrains Mono (Google Fonts)
+
+## What I learned
+
+- Turning a PHP + MySQL prototype into a static app that works anywhere, with `localStorage` as a small database.
+- Building a game loop with `requestAnimationFrame` and a timer bar that animates only `transform`.
+- Comparing user answers fairly by normalising text (`String.prototype.normalize("NFD")`).
+- Theming with CSS custom properties and `prefers-color-scheme`, plus a saved manual override.
+- Writing safe DOM code — user text goes in with `textContent`, never `innerHTML`.
+
+## Run it locally
+
+No build step is needed.
+
+```bash
+git clone https://github.com/brutall100/viktorina-quiz.git
+cd viktorina-quiz
+npx http-server .   # or just open index.html in a browser
+```
+
+## Project structure
+
+```
+viktorina-quiz/
+├── index.html            # page markup
+├── css/
+│   └── style.css         # design tokens, layout, animations, themes
+├── js/
+│   ├── theme.js          # applies the saved theme before first paint
+│   ├── questions.js      # starting question bank
+│   ├── name-generator.js # nickname and password generator
+│   └── app.js            # quiz, levels, question queue, chat, effects
+├── images/               # favicon and initials avatars (SVG)
+└── docs/
+    └── screenshot.webp   # README screenshot
+```
+
+## Credits
+
+- Fonts: [Barlow, Barlow Condensed](https://fonts.google.com/specimen/Barlow) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) — SIL Open Font License.
+- "Alex Doe" is a made-up demo profile; avatars are generated from initials.
+- Quiz questions, code and design — my own work.
