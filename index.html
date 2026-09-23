@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="lt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Viktorina — greita lietuviška viktorina</title>
+    <meta
+      name="description"
+      content="Viktorina — greita, interaktyvi ir mokomoji viktorina lietuviškai: atsakyk į klausimus, rink litus, kelk lygį ir siūlyk savo klausimus."
+    />
+    <meta name="theme-color" content="#f2b705" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/theme.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Pereiti prie turinio</a>
+
+    <div class="backdrop" aria-hidden="true">
+      <div class="backdrop__glow"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="#top" aria-label="Viktorina — į pradžią">
+          <span class="brand__mark" aria-hidden="true">?</span>
+          <span class="brand__name">Viktorina</span>
+        </a>
+
+        <nav class="nav" aria-label="Pagrindinė navigacija">
+          <a href="#zaidimas">Žaisti</a>
+          <a href="#klausimai">Klausimai</a>
+          <a href="#taisykles">Taisyklės</a>
+          <a href="#pokalbiai">Pokalbiai</a>
+        </nav>
+
+        <div class="site-header__tools">
+          <span class="clock mono" id="clock" aria-label="Dabartinis laikas">00:00:00</span>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Perjungti šviesų / tamsų režimą">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+              <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+              </g>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+              <path fill="currentColor" d="M20.5 14.6A8.5 8.5 0 0 1 9.4 3.5a8.5 8.5 0 1 0 11.1 11.1Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="ticker" aria-label="Naujienų juosta">
+        <div class="ticker__track" id="ticker">
+          <span>Sveiki atvykę į Viktoriną</span>
+          <span>Už teisingą atsakymą — nuo 1 iki 5 Lt</span>
+          <span>Įrašyk klausimą ir gauk 10 Lt</span>
+          <span>Nuo 3 lygio gali tvirtinti klausimus</span>
+          <span>Kiekvienam klausimui — 15 sekundžių</span>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- HERO -->
+      <section class="hero wrap" id="top">
+        <div class="hero__text reveal">
+          <p class="eyebrow mono">// v1.0 · pirmoji versija</p>
+          <h1 class="hero__title">Viktorina</h1>
+          <p class="hero__lead">
+            Greita, interaktyvi ir mokomoji viktorina lietuviškai. Atsakyk į klausimus, rink litus, kelk lygį ir
+            pasiūlyk savo klausimų.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#zaidimas">
+              Pradėti žaidimą <span class="btn__arrow" aria-hidden="true">↗</span>
+            </a>
+            <a class="btn btn--ghost" href="#klausimai">
+              Įrašyti klausimą <span class="btn__arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <ul class="stats reveal" aria-label="Viktorina skaičiais">
+          <li class="stat">
+            <span class="stat__value mono" data-count="0" id="stat-questions">0</span>
+            <span class="stat__label">klausimų žaidime</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value mono" data-count="15">0</span>
+            <span class="stat__label">sekundžių atsakymui</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value mono" data-count="5">0</span>
+            <span class="stat__label">žaidėjo lygiai</span>
+          </li>
+          <li class="stat">
+            <span class="stat__value mono" data-count="10" data-suffix=" Lt">0</span>
+            <span class="stat__label">už įrašytą klausimą</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- GAME -->
+      <section class="section wrap" id="zaidimas" aria-labelledby="zaidimas-title">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">01 · žaidimas</p>
+          <h2 id="zaidimas-title">Klausimas ekrane</h2>
+        </header>
+
+        <div class="game">
+          <article class="card quiz reveal" aria-live="polite">
+            <div class="quiz__top mono">
+              <span id="quiz-progress">Klausimas 01</span>
+              <span class="coin" id="quiz-value" title="Klausimo vertė">3 Lt</span>
+            </div>
+
+            <div class="timer" aria-hidden="true"><div class="timer__bar" id="timer-bar"></div></div>
+            <p class="quiz__time mono"><span id="timer-text">15</span> s</p>
+
+            <h3 class="quiz__question" id="quiz-question">Kraunamas klausimas…</h3>
+
+            <form class="quiz__form" id="quiz-form" autocomplete="off">
+              <label class="sr-only" for="quiz-answer">Tavo atsakymas</label>
+              <input class="field" id="quiz-answer" type="text" placeholder="Tavo atsakymas…" required />
+              <button class="btn btn--primary" type="submit">
+                Spėti <span class="btn__arrow" aria-hidden="true">↗</span>
+              </button>
+            </form>
+
+            <p class="quiz__feedback" id="quiz-feedback" role="status"></p>
+
+            <div class="quiz__footer">
+              <button class="btn btn--ghost btn--small" id="quiz-skip" type="button">
+                Kitas klausimas <span class="btn__arrow" aria-hidden="true">↗</span>
+              </button>
+              <span class="mono muted">Serija: <strong id="quiz-streak">0</strong></span>
+            </div>
+          </article>
+
+          <aside class="card player reveal" aria-label="Žaidėjo kortelė">
+            <div class="player__head">
+              <img
+                class="avatar avatar--lg"
+                src="images/avatar-alex-doe.svg"
+                alt="Alex Doe avataras iš inicialų AD"
+                width="64"
+                height="64"
+                loading="lazy"
+              />
+              <div>
+                <p class="player__name">Alex Doe</p>
+                <p class="mono muted player__nick">„<span id="player-nick">Lukas Greitasis</span>“</p>
+              </div>
+            </div>
+
+            <dl class="player__stats">
+              <div>
+                <dt class="mono muted">Litai</dt>
+                <dd class="player__big mono"><span id="player-balance">0</span> Lt</dd>
+              </div>
+              <div>
+                <dt class="mono muted">Lygis</dt>
+                <dd class="player__big mono" id="player-level">1</dd>
+              </div>
+            </dl>
+
+            <div class="level">
+              <div class="level__track" aria-hidden="true"><div class="level__bar" id="level-bar"></div></div>
+              <p class="mono muted level__hint" id="level-hint">Iki 2 lygio: 20 Lt</p>
+            </div>
+
+            <div class="player__tools">
+              <button class="btn btn--ghost btn--small" id="nick-button" type="button">
+                Naujas slapyvardis <span class="btn__arrow" aria-hidden="true">↗</span>
+              </button>
+              <button class="btn btn--ghost btn--small" id="password-button" type="button">
+                Slaptažodis <span class="btn__arrow" aria-hidden="true">↗</span>
+              </button>
+            </div>
+            <p class="password mono" id="password" aria-live="polite"></p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ADD QUESTION -->
+      <section class="section wrap" id="klausimai" aria-labelledby="klausimai-title">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">02 · klausimų bankas</p>
+          <h2 id="klausimai-title">Įrašyk savo klausimą</h2>
+          <p class="section__lead">
+            Klausimas pirmiausia patenka į eilę. Kai surenka 5 balsus, žaidėjas nuo 3 lygio gali jį patvirtinti — tada
+            klausimas atsiranda žaidime.
+          </p>
+        </header>
+
+        <div class="submit">
+          <form class="card new-question reveal" id="new-question-form" novalidate>
+            <div class="form-row">
+              <label for="nq-question">Klausimas</label>
+              <input class="field" id="nq-question" type="text" maxlength="150" placeholder="Pvz.: Kokia Latvijos sostinė?" required />
+            </div>
+            <div class="form-row">
+              <label for="nq-answer">Atsakymas</label>
+              <input class="field" id="nq-answer" type="text" maxlength="50" placeholder="Pvz.: Ryga" required />
+            </div>
+            <p class="form-error" id="nq-error" role="alert"></p>
+            <button class="btn btn--primary" type="submit">
+              Įrašyti klausimą <span class="btn__arrow" aria-hidden="true">↗</span>
+            </button>
+          </form>
+
+          <div class="card queue reveal">
+            <div class="queue__head">
+              <h3>Laukia patvirtinimo</h3>
+              <span class="mono muted" id="queue-count">0</span>
+            </div>
+            <ul class="queue__list" id="queue-list"></ul>
+            <p class="queue__empty muted" id="queue-empty">Eilė tuščia. Įrašyk pirmą klausimą!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RULES -->
+      <section class="section wrap" id="taisykles" aria-labelledby="taisykles-title">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">03 · taisyklės</p>
+          <h2 id="taisykles-title">Penki lygiai</h2>
+        </header>
+
+        <ol class="levels">
+          <li class="card level-card reveal">
+            <span class="level-card__num mono">L1</span>
+            <h3>Naujokas</h3>
+            <p>Gali žaisti ir įrašyti klausimus. Už kiekvieną tvarkingai parašytą klausimą — <strong>10 Lt</strong>.</p>
+          </li>
+          <li class="card level-card reveal">
+            <span class="level-card__num mono">L2</span>
+            <h3>Žaidėjas</h3>
+            <p>Balsuoja už naujus klausimus. Klausimui reikia bent <strong>5 balsų</strong>.</p>
+          </li>
+          <li class="card level-card reveal">
+            <span class="level-card__num mono">L3</span>
+            <h3>Tikrintojas</h3>
+            <p>Gali patvirtinti arba atmesti klausimą. Už kiekvieną sprendimą — <strong>1 Lt</strong>.</p>
+          </li>
+          <li class="card level-card reveal">
+            <span class="level-card__num mono">L4</span>
+            <h3>Ekspertas</h3>
+            <p>Sprendžia, kurie klausimai pateks į duomenų bazę, ir padeda taisyti klaidas.</p>
+          </li>
+          <li class="card level-card reveal">
+            <span class="level-card__num mono">L5</span>
+            <h3>Meistras</h3>
+            <p>Aukščiausias lygis. Rūpinasi, kad klausimai būtų tvarkingi ir įdomūs visiems.</p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- CHAT -->
+      <section class="section wrap" id="pokalbiai" aria-labelledby="pokalbiai-title">
+        <header class="section__head reveal">
+          <p class="eyebrow mono">04 · pokalbiai</p>
+          <h2 id="pokalbiai-title">Pokalbiai</h2>
+        </header>
+
+        <div class="card chat reveal">
+          <ul class="chat__list" id="chat-list" aria-live="polite">
+            <li class="msg">
+              <img class="avatar" src="images/avatar-quizmaster.svg" alt="Viktorinos vedėjo avataras" width="36" height="36" loading="lazy" />
+              <div class="msg__bubble">
+                <p>Labas! Pasiruošęs naujam klausimui?</p>
+                <span class="msg__time mono">11:00</span>
+              </div>
+            </li>
+            <li class="msg msg--me">
+              <img class="avatar" src="images/avatar-alex-doe.svg" alt="Alex Doe avataras" width="36" height="36" loading="lazy" />
+              <div class="msg__bubble">
+                <p>Žinoma! Šiandien noriu pasiekti 3 lygį.</p>
+                <span class="msg__time mono">11:01</span>
+              </div>
+            </li>
+            <li class="msg">
+              <img class="avatar" src="images/avatar-quizmaster.svg" alt="Viktorinos vedėjo avataras" width="36" height="36" loading="lazy" />
+              <div class="msg__bubble">
+                <p>Puiku. Atsakinėk greitai — laikas bėga!</p>
+                <span class="msg__time mono">11:02</span>
+              </div>
+            </li>
+          </ul>
+
+          <form class="chat__form" id="chat-form" autocomplete="off">
+            <label class="sr-only" for="chat-input">Rašyti žinutę</label>
+            <input class="field" id="chat-input" type="text" maxlength="200" placeholder="Rašyti žinutę…" required />
+            <button class="btn btn--primary" type="submit">
+              Siųsti <span class="btn__arrow" aria-hidden="true">↗</span>
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p class="mono muted">Viktorina · pirmoji versija · 2021–2022</p>
+        <a class="mono" href="https://github.com/brutall100/viktorina-quiz">Kodas GitHub ↗</a>
+      </div>
+    </footer>
+
+    <script src="js/questions.js"></script>
+    <script src="js/name-generator.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
