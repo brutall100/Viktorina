@@ -2,7 +2,7 @@
 
 A fast, interactive quiz game in Lithuanian — answer against the clock, earn litai, level up and submit your own questions.
 
-**[Live demo](https://brutall100.github.io/viktorina-quiz/)** · **[Source code](https://github.com/brutall100/viktorina-quiz)**
+**[Live demo](https://brutall100.github.io/viktorina-v1/)** · **[Source code](https://github.com/brutall100/viktorina-v1)**
 
 ![Viktorina — quiz game screenshot](docs/screenshot.webp)
 
@@ -48,15 +48,15 @@ on GitHub Pages — no server or database needed. Everything the player does is 
 No build step is needed.
 
 ```bash
-git clone https://github.com/brutall100/viktorina-quiz.git
-cd viktorina-quiz
+git clone https://github.com/brutall100/viktorina-v1.git
+cd viktorina-v1
 npx http-server .   # or just open index.html in a browser
 ```
 
 ## Project structure
 
 ```
-viktorina-quiz/
+viktorina-v1/
 ├── index.html            # page markup
 ├── css/
 │   └── style.css         # design tokens, layout, animations, themes
